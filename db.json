@@ -1,0 +1,72 @@
+{
+  "datun_dictionary": {
+    "entities": {
+      "Order Item": {
+        "CREATED_BY": "date",
+        "ROW_ID": "integer",
+        "ACTION_CD": {
+          "type": "text",
+          "values": [
+            "Suspend",
+            "Active",
+            "Stopped"
+          ]
+        },
+        "SHIP_COMPLETE_FLG": "boolean"
+      },
+      "Order Item OM": {
+        "SERVICE_START_DT": "date",
+        "CHG_ORD_COST_CD": "text",
+        "MODIFICATION_NUM": "integer",
+        "PREV_ASSET_STAT_CD": {
+          "type": "string",
+          "values": [
+            "Active",
+            "Disabled"
+          ]
+        }
+      }
+    },
+    "operators": {
+      "integer": [
+        "$equal",
+        "$gt"
+      ],
+      "text": [
+        "$equal",
+        "$like",
+        "$in"
+      ],
+      "boolean": [
+        "$equal"
+      ],
+      "date": [
+        "$equal",
+        "$gt",
+        "$lt"
+      ]
+    },
+    "operator_description": {
+      "$equal": {
+        "description": "description of the operation",
+        "singular": true,
+        "label": "equals"
+      },
+      "$gt": {
+        "description": "description of the operation",
+        "singular": true,
+        "label": "greater than"
+      },
+      "$like": {
+        "description": "like operator",
+        "singular": true,
+        "label": "like"
+      },
+      "$in": {
+        "description": "field value is in a predefined list",
+        "singular": false,
+        "label": "select"
+      }
+    }
+  }
+}
